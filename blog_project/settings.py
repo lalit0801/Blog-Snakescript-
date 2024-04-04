@@ -40,8 +40,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # third party apps
+    'rest_framework',
+    'rest_framework.authtoken',
+    'drf_yasg',
+
+    # project apps
     'account',
     'blog_app',
+    
 ]
 
 MIDDLEWARE = [
@@ -130,3 +138,28 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'account.User'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        # Add other authentication classes if needed
+    ],
+}
+
+SWAGGER_SETTINGS = {
+    'REFETCH_SCHEMA_WITH_AUTH': True,
+    'REFETCH_SCHEMA_ON_LOGOUT' : True,
+    'DISPLAY_OPERATION_ID' : False,
+    'DEFAULT_API_URL': None,
+    # 'LOGIN_URL' : 'rest_framework:login',
+    # 'LOGOUT_URL' : 'rest_framework:logout',
+    'SECURITY_DEFINITIONS': {
+        'api_key': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'Authorization (must append Keyword "Token")'
+        }
+    },
+}

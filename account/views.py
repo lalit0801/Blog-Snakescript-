@@ -95,7 +95,7 @@ class MailVerificationView(generics.CreateAPIView):
             
             obj = MailVerificationOTP.objects.get(user = user.id)
             
-            thirty_minutes_ago = timezone.now() - timezone.timedelta(minutes=1)
+            thirty_minutes_ago = timezone.now() - timezone.timedelta(minutes=30)
                 
             if obj.updated_at < thirty_minutes_ago:
                 raise Exception('otp expired')

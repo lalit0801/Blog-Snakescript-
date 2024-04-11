@@ -1,9 +1,9 @@
 Django Web Application with CRUD Operations
+
 This Django web application is built with features including user authentication, CRUD operations, and a RESTful API powered by Django REST Framework. The application allows users to sign up with email verification, login, create, read, update, and delete blog posts.
 
-Features
+Features: 
 Signup with Email Verification: Users can sign up for the web application by providing their email address. An email verification process ensures the authenticity of the user's email.
-
 Login: Registered users can log in to access the features of the web application.
 
 CRUD Operations:
@@ -12,7 +12,8 @@ Create Blog Post: Users can create a new blog post by providing a title, descrip
 List Blog Posts: All blog posts are listed on the dashboard, providing easy access to the users.
 Edit Blog Posts: Users can edit existing blog posts, updating their title, description, or image.
 Delete Blog Posts: Users have the option to delete blog posts they no longer wish to keep.
-Technologies Used
+
+Technologies Used::
 Django REST Framework, Swagger: Integrated Swagger for API documentation and testing.
 
 Getting Started

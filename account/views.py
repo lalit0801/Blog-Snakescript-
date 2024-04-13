@@ -10,8 +10,7 @@ from django.utils import timezone
 from rest_framework.permissions import IsAuthenticated
 
 
-
-    
+# APIs 
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterUserSerializer
